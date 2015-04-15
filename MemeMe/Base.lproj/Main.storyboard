@@ -28,6 +28,11 @@
                                             <action selector="pickAnImage:" destination="vXZ-lx-hvc" id="nPR-1v-3ba"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Camera" id="BHi-PD-16U">
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="vXZ-lx-hvc" id="oaG-KA-Gon"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -76,6 +81,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="BHi-PD-16U" id="awR-Ht-RVG"/>
                         <outlet property="imagePickerView" destination="9kY-jy-i2R" id="Wu2-vS-Bjl"/>
                     </connections>
                 </viewController>
