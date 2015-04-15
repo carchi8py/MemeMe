@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeEditorViewController: UIViewController {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imagePickerView: UIImageView!
     
@@ -20,7 +20,20 @@ class MemeEditorViewController: UIViewController {
     @IBAction func pickAnImage(sender: AnyObject) {
         
         let pickerController = UIImagePickerController()
+        pickerController.delegate = self
         self.presentViewController(pickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.imagePickerView.image = image
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }
