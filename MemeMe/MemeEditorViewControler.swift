@@ -32,6 +32,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.imagePickerView.image = image
+            self.imagePickerView.contentMode = UIViewContentMode.Center
         }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
