@@ -13,6 +13,7 @@ class MemeTextFieldDelegate : NSObject, UITextFieldDelegate {
     func textFieldDidBeginEditing(textField: UITextField) {
         //TODO: Fix this later
         textField.text = " ";
+        textField.textAlignment = NSTextAlignment.Center
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
