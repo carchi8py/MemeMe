@@ -28,6 +28,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         self.bottomText.delegate = bottomDelegate
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
 
     @IBAction func pickAnImage(sender: AnyObject) {
         
@@ -35,6 +36,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         pickerController.delegate = self
         pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         self.presentViewController(pickerController, animated: true, completion: nil)
+
     }
     
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
@@ -43,11 +45,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         pickerController.delegate = self
         pickerController.sourceType = UIImagePickerControllerSourceType.Camera
         self.presentViewController(pickerController, animated: true, completion: nil)
+
     }
     
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
+
 
     }
     
@@ -55,11 +59,11 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.imagePickerView.image = image
             self.imagePickerView.contentMode = UIViewContentMode.ScaleToFill
+
         }
         self.dismissViewControllerAnimated(true, completion: nil)
+
     }
-    
-    
 
 }
 
