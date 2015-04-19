@@ -15,7 +15,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
     
-    
     let topDelegate = MemeTextFieldDelegate()
     let bottomDelegate = MemeTextFieldDelegate()
     
@@ -28,15 +27,24 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewWillAppear(animated: Bool) {
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        // Subscribe to keyboard notifications to allow the view to raise when necessary
+        self.subscribeToKeyboardNotifications()
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+
+        self.unsubscribeToKeyboardNotifications()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Set the text properties
         self.topText.defaultTextAttributes = memeTextAttributes
         self.bottomText.defaultTextAttributes = memeTextAttributes
         self.topText.delegate = topDelegate
         self.bottomText.delegate = bottomDelegate
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
 
@@ -46,7 +54,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         pickerController.delegate = self
         pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         self.presentViewController(pickerController, animated: true, completion: nil)
-
     }
     
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
@@ -55,14 +62,11 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         pickerController.delegate = self
         pickerController.sourceType = UIImagePickerControllerSourceType.Camera
         self.presentViewController(pickerController, animated: true, completion: nil)
-
     }
     
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
-
-
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
@@ -72,7 +76,24 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
         }
         self.dismissViewControllerAnimated(true, completion: nil)
-
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        self.view.frame.origin.y -= getKeyboardHeight(notification)
+    }
+    
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.CGRectValue().height
+    }
+    
+    func subscribeToKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+    }
+    
+    func unsubscribeToKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
     }
 
 }
