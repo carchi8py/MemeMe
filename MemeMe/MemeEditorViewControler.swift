@@ -12,13 +12,20 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var topText: UITextField!
+    @IBOutlet weak var bottomText: UITextField!
     
+    let topDelegate = MemeTextFieldDelegate()
+    let bottomDelegate = MemeTextFieldDelegate()
     
     override func viewWillAppear(animated: Bool) {
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.topText.delegate = topDelegate
+        self.bottomText.delegate = bottomDelegate
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -51,6 +58,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
 
 }
 

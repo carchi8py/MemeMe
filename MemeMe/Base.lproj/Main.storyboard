@@ -38,8 +38,8 @@
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cnu-3X-Hgf">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="27" y="231" width="340" height="30"/>
                                 </variation>
@@ -47,9 +47,9 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ChT-C6-QLm">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="27" y="503" width="340" height="30"/>
+                                    <rect key="frame" x="27" y="502" width="340" height="30"/>
                                 </variation>
                             </textField>
                         </subviews>
@@ -58,12 +58,15 @@
                             <constraint firstItem="Z5n-vT-lCq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="4XM-Xg-zsR"/>
                             <constraint firstItem="Z5n-vT-lCq" firstAttribute="top" secondItem="9kY-jy-i2R" secondAttribute="bottom" constant="210" id="7fw-3M-lmP"/>
                             <constraint firstItem="9kY-jy-i2R" firstAttribute="top" secondItem="cnu-3X-Hgf" secondAttribute="bottom" constant="-41" id="J1b-4A-vhr"/>
+                            <constraint firstItem="9kY-jy-i2R" firstAttribute="leading" secondItem="cnu-3X-Hgf" secondAttribute="trailing" constant="-350" id="McS-IA-Rjn"/>
                             <constraint firstAttribute="centerX" secondItem="ChT-C6-QLm" secondAttribute="centerX" constant="-0.5" id="RZm-mr-QFs"/>
                             <constraint firstItem="9kY-jy-i2R" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="1" id="Sl0-FU-jMy"/>
+                            <constraint firstItem="9kY-jy-i2R" firstAttribute="leading" secondItem="ChT-C6-QLm" secondAttribute="trailing" constant="-350" id="TRf-hb-ckb"/>
                             <constraint firstItem="ChT-C6-QLm" firstAttribute="top" secondItem="9kY-jy-i2R" secondAttribute="bottom" constant="-43" id="Xkw-x8-Ym0"/>
                             <constraint firstItem="9kY-jy-i2R" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="200" id="ZtO-nO-lvj"/>
                             <constraint firstItem="Z5n-vT-lCq" firstAttribute="top" secondItem="9kY-jy-i2R" secondAttribute="bottom" constant="210" id="d3M-vf-pwo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9kY-jy-i2R" secondAttribute="trailing" constant="1" id="nIv-ss-91B"/>
+                            <constraint firstItem="9kY-jy-i2R" firstAttribute="leading" secondItem="ChT-C6-QLm" secondAttribute="trailing" constant="-350" id="pzT-YN-dpz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z5n-vT-lCq" secondAttribute="trailing" constant="-16" id="qVu-t1-5Kp"/>
                             <constraint firstAttribute="centerX" secondItem="cnu-3X-Hgf" secondAttribute="centerX" constant="-0.5" id="rUr-eE-UzZ"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Z5n-vT-lCq" secondAttribute="bottom" id="va9-fW-lxy"/>
@@ -77,9 +80,12 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="J1b-4A-vhr"/>
+                                <exclude reference="McS-IA-Rjn"/>
                                 <exclude reference="Sl0-FU-jMy"/>
+                                <exclude reference="TRf-hb-ckb"/>
                                 <exclude reference="ZtO-nO-lvj"/>
                                 <exclude reference="nIv-ss-91B"/>
+                                <exclude reference="pzT-YN-dpz"/>
                                 <exclude reference="rUr-eE-UzZ"/>
                                 <exclude reference="RZm-mr-QFs"/>
                                 <exclude reference="Xkw-x8-Ym0"/>
@@ -99,9 +105,12 @@
                             </mask>
                             <mask key="constraints">
                                 <include reference="J1b-4A-vhr"/>
+                                <include reference="McS-IA-Rjn"/>
                                 <include reference="Sl0-FU-jMy"/>
+                                <include reference="TRf-hb-ckb"/>
                                 <include reference="ZtO-nO-lvj"/>
                                 <include reference="nIv-ss-91B"/>
+                                <include reference="pzT-YN-dpz"/>
                                 <include reference="rUr-eE-UzZ"/>
                                 <include reference="RZm-mr-QFs"/>
                                 <include reference="Xkw-x8-Ym0"/>
@@ -114,8 +123,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bottomText" destination="ChT-C6-QLm" id="NTf-zf-wCB"/>
                         <outlet property="cameraButton" destination="BHi-PD-16U" id="awR-Ht-RVG"/>
                         <outlet property="imagePickerView" destination="9kY-jy-i2R" id="Wu2-vS-Bjl"/>
+                        <outlet property="topText" destination="cnu-3X-Hgf" id="02V-7C-bvn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
