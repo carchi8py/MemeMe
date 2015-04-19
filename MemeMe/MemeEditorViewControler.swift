@@ -30,6 +30,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         // Subscribe to keyboard notifications to allow the view to raise when necessary
         self.subscribeToKeyboardNotifications()
         self.subscribeToDissmissKeyboardNotifications()
+
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -48,10 +49,17 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         self.bottomText.delegate = bottomDelegate
         
     }
+    @IBAction func cancle()
+    {
+        //TODO get Cancle to work
+        self.topText.text = ""
+        self.bottomText.text = ""
+    }
     
-    func save() {
+    @IBAction func save() {
         //Create a meme
         let memedImage = generateMemedImage()
+        imagePickerView.image = memedImage
         var meme = memeObj(topText: topText.text!, bottomText: bottomText.text!, plainImage: imagePickerView.image!, memedImage: memedImage)
     }
     
@@ -104,11 +112,15 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     //Notification center methods
     
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        if bottomText.isFirstResponder() {
+            self.view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+        if bottomText.isFirstResponder() {
+            self.view.frame.origin.y += getKeyboardHeight(notification)
+        }
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
