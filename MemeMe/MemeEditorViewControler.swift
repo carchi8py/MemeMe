@@ -49,6 +49,27 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
     }
     
+    func save() {
+        //Create a meme
+        let memedImage = generateMemedImage()
+        var meme = memeObj(topText: topText.text!, bottomText: bottomText.text!, plainImage: imagePickerView.image!, memedImage: memedImage)
+    }
+    
+    func generateMemedImage() -> UIImage {
+        
+        //TODO: Hide toolbar
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //TODO: Show toolbar
+        
+        return memedImage
+    }
+    
+    //Image Picking Methods
 
     @IBAction func pickAnImage(sender: AnyObject) {
         
@@ -79,6 +100,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    //Notification center methods
     
     func keyboardWillShow(notification: NSNotification) {
         self.view.frame.origin.y -= getKeyboardHeight(notification)
