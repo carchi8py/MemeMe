@@ -184,6 +184,8 @@
                         <outlet property="bottomText" destination="ChT-C6-QLm" id="NTf-zf-wCB"/>
                         <outlet property="cameraButton" destination="BHi-PD-16U" id="awR-Ht-RVG"/>
                         <outlet property="imagePickerView" destination="9kY-jy-i2R" id="Wu2-vS-Bjl"/>
+                        <outlet property="ourNavBar" destination="fhR-7U-ZxN" id="dr9-Ol-x9L"/>
+                        <outlet property="ourToolbar" destination="Z5n-vT-lCq" id="5g1-4x-6Fl"/>
                         <outlet property="topText" destination="cnu-3X-Hgf" id="02V-7C-bvn"/>
                     </connections>
                 </viewController>

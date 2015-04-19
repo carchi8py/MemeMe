@@ -14,6 +14,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
+    @IBOutlet weak var ourToolbar: UIToolbar!
+    @IBOutlet weak var ourNavBar: UINavigationItem!
     
     let topDelegate = MemeTextFieldDelegate()
     let bottomDelegate = MemeTextFieldDelegate()
@@ -65,14 +67,16 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     func generateMemedImage() -> UIImage {
         
-        //TODO: Hide toolbar
+        ourToolbar.hidden = true
+        navigationController?.navigationBarHidden = true
         
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        //TODO: Show toolbar
+        ourToolbar.hidden = false
+        navigationController?.navigationBarHidden = false
         
         return memedImage
     }
@@ -103,7 +107,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.imagePickerView.image = image
-            self.imagePickerView.contentMode = UIViewContentMode.ScaleToFill
+            self.imagePickerView.contentMode = UIViewContentMode.ScaleAspectFill
 
         }
         self.dismissViewControllerAnimated(true, completion: nil)
