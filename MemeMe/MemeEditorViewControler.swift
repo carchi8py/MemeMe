@@ -67,6 +67,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         var meme = memeObj(topText: topText.text!, bottomText: bottomText.text!, plainImage: imagePickerView.image!, memedImage: memedImage)
         let activityContoller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         self.presentViewController(activityContoller, animated: true, completion: nil)
+        (UIApplication.sharedApplication().delegate as! AppDelegate).memes.append((meme))
     }
     
     func generateMemedImage() -> UIImage {
