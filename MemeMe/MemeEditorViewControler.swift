@@ -16,6 +16,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var ourToolbar: UIToolbar!
     @IBOutlet weak var ourNavBar: UINavigationItem!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     let topDelegate = MemeTextFieldDelegate()
     let bottomDelegate = MemeTextFieldDelegate()
@@ -49,6 +50,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         self.bottomText.defaultTextAttributes = memeTextAttributes
         self.topText.delegate = topDelegate
         self.bottomText.delegate = bottomDelegate
+        self.shareButton.enabled = false
         
     }
     @IBAction func cancle()
@@ -56,13 +58,15 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         //TODO get Cancle to work
         self.topText.text = ""
         self.bottomText.text = ""
+        self.shareButton.enabled = false
     }
     
     @IBAction func save() {
         //Create a meme
         let memedImage = generateMemedImage()
-        imagePickerView.image = memedImage
         var meme = memeObj(topText: topText.text!, bottomText: bottomText.text!, plainImage: imagePickerView.image!, memedImage: memedImage)
+        let activityContoller = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        self.presentViewController(activityContoller, animated: true, completion: nil)
     }
     
     func generateMemedImage() -> UIImage {
@@ -89,6 +93,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         pickerController.delegate = self
         pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         self.presentViewController(pickerController, animated: true, completion: nil)
+        self.shareButton.enabled = true
     }
     
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
@@ -97,11 +102,13 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         pickerController.delegate = self
         pickerController.sourceType = UIImagePickerControllerSourceType.Camera
         self.presentViewController(pickerController, animated: true, completion: nil)
+        self.shareButton.enabled = true
     }
     
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
+        self.shareButton.enabled = false
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {

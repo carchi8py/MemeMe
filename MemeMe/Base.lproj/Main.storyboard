@@ -36,9 +36,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9kY-jy-i2R">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="18" y="72" width="366" height="675"/>
-                                </variation>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5n-vT-lCq">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -59,17 +56,11 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="31" y="88" width="340" height="30"/>
-                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ChT-C6-QLm">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="31" y="709" width="340" height="30"/>
-                                </variation>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -101,6 +92,15 @@
                                 <exclude reference="ChT-C6-QLm"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="va9-fW-lxy"/>
+                                <exclude reference="RZm-mr-QFs"/>
+                                <exclude reference="Xkw-x8-Ym0"/>
+                                <exclude reference="rUr-eE-UzZ"/>
+                                <exclude reference="4XM-Xg-zsR"/>
+                                <exclude reference="7fw-3M-lmP"/>
+                                <exclude reference="d3M-vf-pwo"/>
+                                <exclude reference="qVu-t1-5Kp"/>
+                                <exclude reference="uJF-Zd-79w"/>
                                 <exclude reference="J1b-4A-vhr"/>
                                 <exclude reference="McS-IA-Rjn"/>
                                 <exclude reference="Sl0-FU-jMy"/>
@@ -108,15 +108,6 @@
                                 <exclude reference="ZtO-nO-lvj"/>
                                 <exclude reference="nIv-ss-91B"/>
                                 <exclude reference="pzT-YN-dpz"/>
-                                <exclude reference="rUr-eE-UzZ"/>
-                                <exclude reference="RZm-mr-QFs"/>
-                                <exclude reference="Xkw-x8-Ym0"/>
-                                <exclude reference="4XM-Xg-zsR"/>
-                                <exclude reference="7fw-3M-lmP"/>
-                                <exclude reference="d3M-vf-pwo"/>
-                                <exclude reference="qVu-t1-5Kp"/>
-                                <exclude reference="uJF-Zd-79w"/>
-                                <exclude reference="va9-fW-lxy"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -127,6 +118,15 @@
                                 <include reference="ChT-C6-QLm"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="va9-fW-lxy"/>
+                                <include reference="RZm-mr-QFs"/>
+                                <include reference="Xkw-x8-Ym0"/>
+                                <include reference="rUr-eE-UzZ"/>
+                                <include reference="4XM-Xg-zsR"/>
+                                <include reference="7fw-3M-lmP"/>
+                                <include reference="d3M-vf-pwo"/>
+                                <include reference="qVu-t1-5Kp"/>
+                                <include reference="uJF-Zd-79w"/>
                                 <include reference="J1b-4A-vhr"/>
                                 <include reference="McS-IA-Rjn"/>
                                 <include reference="Sl0-FU-jMy"/>
@@ -134,15 +134,6 @@
                                 <include reference="ZtO-nO-lvj"/>
                                 <include reference="nIv-ss-91B"/>
                                 <include reference="pzT-YN-dpz"/>
-                                <include reference="rUr-eE-UzZ"/>
-                                <include reference="RZm-mr-QFs"/>
-                                <include reference="Xkw-x8-Ym0"/>
-                                <include reference="4XM-Xg-zsR"/>
-                                <include reference="7fw-3M-lmP"/>
-                                <include reference="d3M-vf-pwo"/>
-                                <include reference="qVu-t1-5Kp"/>
-                                <include reference="uJF-Zd-79w"/>
-                                <include reference="va9-fW-lxy"/>
                             </mask>
                         </variation>
                     </view>
@@ -152,9 +143,8 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="Save"/>
+                                <variation key="heightClass=regular-widthClass=compact"/>
                                 <connections>
                                     <action selector="save" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ysr-gs-2Io"/>
                                 </connections>
@@ -186,6 +176,7 @@
                         <outlet property="imagePickerView" destination="9kY-jy-i2R" id="Wu2-vS-Bjl"/>
                         <outlet property="ourNavBar" destination="fhR-7U-ZxN" id="dr9-Ol-x9L"/>
                         <outlet property="ourToolbar" destination="Z5n-vT-lCq" id="5g1-4x-6Fl"/>
+                        <outlet property="shareButton" destination="bts-tp-BW5" id="WRP-ey-Bns"/>
                         <outlet property="topText" destination="cnu-3X-Hgf" id="02V-7C-bvn"/>
                     </connections>
                 </viewController>
