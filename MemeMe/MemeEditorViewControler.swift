@@ -22,10 +22,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     let bottomDelegate = MemeTextFieldDelegate()
     
     let memeTextAttributes = [
-        NSStrokeColorAttributeName : UIColor.blackColor(),
-        NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : 3.0
+        NSStrokeWidthAttributeName : -3.0,
+        NSStrokeColorAttributeName : UIColor.blackColor(),
+        NSForegroundColorAttributeName : UIColor.whiteColor()
     ]
     
     override func viewWillAppear(animated: Bool) {

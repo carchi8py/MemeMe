@@ -10,10 +10,13 @@ import Foundation
 import UIKit
 
 class MemeTextFieldDelegate : NSObject, UITextFieldDelegate {
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         //TODO: Fix this later
         textField.text = " ";
         textField.textAlignment = NSTextAlignment.Center
+        textField.backgroundColor = UIColor.clearColor()
+
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
