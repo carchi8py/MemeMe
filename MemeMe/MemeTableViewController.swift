@@ -31,6 +31,11 @@ class MemeTableViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        tableView.rowHeight = 150
+        return tableView.rowHeight
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailController = self.storyboard?.instantiateViewControllerWithIdentifier("detailController") as! MemeDetailViewController
         detailController.meme = self.memes[indexPath.row]
