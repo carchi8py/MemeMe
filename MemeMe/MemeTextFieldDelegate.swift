@@ -16,6 +16,7 @@ class MemeTextFieldDelegate : NSObject, UITextFieldDelegate {
         textField.text = " ";
         textField.textAlignment = NSTextAlignment.Center
         textField.backgroundColor = UIColor.clearColor()
+        textField.borderStyle = UITextBorderStyle.None
 
     }
     
