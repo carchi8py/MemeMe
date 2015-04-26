@@ -18,5 +18,7 @@ class MemeDetailViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.memeImage.image = meme.memedImage
+        self.memeImage.contentMode = UIViewContentMode.ScaleAspectFill
+    
     }
 }
