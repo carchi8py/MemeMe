@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MpB-SD-DkP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MpB-SD-DkP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -40,7 +40,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5n-vT-lCq">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Pick" id="1Gx-tn-44Y">
+                                    <barButtonItem title="Album" width="210" id="1Gx-tn-44Y">
                                         <connections>
                                             <action selector="pickAnImage:" destination="vXZ-lx-hvc" id="nPR-1v-3ba"/>
                                         </connections>
@@ -144,7 +144,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Save"/>
-                                <variation key="heightClass=regular-widthClass=compact"/>
                                 <connections>
                                     <action selector="save" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ysr-gs-2Io"/>
                                 </connections>
@@ -205,11 +204,11 @@
             </objects>
             <point key="canvasLocation" x="856.5" y="782.25"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="10N-ri-A93">
             <objects>
                 <navigationController id="F82-WV-gmS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="tNg-2j-mN9"/>
+                    <tabBarItem key="tabBarItem" title="" image="table" id="tNg-2j-mN9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="x7Y-qg-IU3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -231,6 +230,7 @@
                         <viewControllerLayoutGuide type="bottom" id="9A3-8m-8Ua"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yan-5y-rsO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="amz-f0-M9A">
@@ -272,10 +272,10 @@
                                 <exclude reference="amz-f0-M9A"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="8xa-Td-lLo"/>
                                 <exclude reference="02d-qo-BNQ"/>
                                 <exclude reference="0Db-w2-vSn"/>
                                 <exclude reference="QkQ-ax-lma"/>
-                                <exclude reference="8xa-Td-lLo"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -283,10 +283,10 @@
                                 <include reference="amz-f0-M9A"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="8xa-Td-lLo"/>
                                 <include reference="02d-qo-BNQ"/>
                                 <include reference="0Db-w2-vSn"/>
                                 <include reference="QkQ-ax-lma"/>
-                                <include reference="8xa-Td-lLo"/>
                             </mask>
                         </variation>
                     </view>
@@ -296,11 +296,11 @@
             </objects>
             <point key="canvasLocation" x="2572.5" y="593.25"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="huI-os-hWn">
             <objects>
                 <navigationController id="bPe-q9-waM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="WSF-YL-97h"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection" id="WSF-YL-97h"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ogg-Rb-7JG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -318,6 +318,7 @@
             <objects>
                 <collectionViewController id="xaw-Me-2Fn" customClass="MemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ghA-KO-1Aa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nLj-Eb-gBi">
                             <size key="itemSize" width="155" height="116"/>
@@ -369,4 +370,8 @@
             <point key="canvasLocation" x="2547" y="1328.25"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection" width="30" height="30"/>
+        <image name="table" width="30" height="30"/>
+    </resources>
 </document>
