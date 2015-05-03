@@ -178,7 +178,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="rv6-7Z-yTV">
             <objects>
-                <tabBarController id="v6e-to-Blf" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="savedController" id="v6e-to-Blf" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Iqv-C8-Ltd"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="d9N-98-Oye">
