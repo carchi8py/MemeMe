@@ -14,6 +14,8 @@ class MemeTextFieldDelegate : NSObject, UITextFieldDelegate {
     func textFieldDidBeginEditing(textField: UITextField) {
         //TODO: Fix this later
         textField.text = " ";
+        textField.autocapitalizationType =
+        UITextAutocapitalizationType.AllCharacters
         textField.textAlignment = NSTextAlignment.Center
         textField.backgroundColor = UIColor.clearColor()
         textField.borderStyle = UITextBorderStyle.None
