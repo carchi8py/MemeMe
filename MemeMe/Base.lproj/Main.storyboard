@@ -314,8 +314,8 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="z7C-7P-GZH" secondAttribute="trailing" constant="-16" id="1Ue-wZ-00W"/>
                             <constraint firstItem="z7C-7P-GZH" firstAttribute="leading" secondItem="rkP-sJ-LTt" secondAttribute="leadingMargin" constant="-16" id="jpN-LV-dgP"/>
-                            <constraint firstItem="VxN-fY-mMF" firstAttribute="top" secondItem="z7C-7P-GZH" secondAttribute="bottom" constant="70" id="n5R-sf-Vkq"/>
-                            <constraint firstItem="z7C-7P-GZH" firstAttribute="top" secondItem="jXz-4o-WLM" secondAttribute="bottom" constant="48" id="qzK-Te-hTI"/>
+                            <constraint firstItem="VxN-fY-mMF" firstAttribute="top" secondItem="z7C-7P-GZH" secondAttribute="bottom" constant="150" id="n5R-sf-Vkq"/>
+                            <constraint firstItem="z7C-7P-GZH" firstAttribute="top" secondItem="jXz-4o-WLM" secondAttribute="bottom" constant="150" id="qzK-Te-hTI"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
