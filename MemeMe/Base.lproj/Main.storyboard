@@ -285,7 +285,7 @@
                     <navigationItem key="navigationItem" id="ToY-Hg-X8X">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="eFl-uv-2Nu">
                             <connections>
-                                <segue destination="MpB-SD-DkP" kind="showDetail" id="T4i-Bu-KFW"/>
+                                <action selector="newMeme:" destination="y4g-WJ-Rl9" id="s5w-16-Ck7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -18,6 +18,11 @@ class MemeTableViewController: UIViewController, UITableViewDataSource {
         memes = applicationDelegate.memes
     }
     
+
+    @IBAction func newMeme(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.memes.count
     }
