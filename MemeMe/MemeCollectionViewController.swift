@@ -13,6 +13,11 @@ class MemeCollectionViewController : UICollectionViewController {
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     var memes : [memeObj]!
+    
+    @IBAction func NewMeme(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

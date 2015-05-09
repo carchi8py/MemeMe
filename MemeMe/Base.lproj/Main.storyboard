@@ -415,7 +415,21 @@
                             <outlet property="delegate" destination="xaw-Me-2Fn" id="aGH-Kh-hBv"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="954-1s-Ph4"/>
+                    <toolbarItems>
+                        <barButtonItem systemItem="add" id="0ZP-VI-lC0">
+                            <connections>
+                                <action selector="newMeme:" destination="y4g-WJ-Rl9" id="kAL-sW-fdw"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="954-1s-Ph4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pKm-LT-CCJ">
+                            <connections>
+                                <action selector="NewMeme:" destination="xaw-Me-2Fn" id="Peu-ZB-ETa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpH-kA-tNI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
