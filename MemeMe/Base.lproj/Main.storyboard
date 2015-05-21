@@ -306,26 +306,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z7C-7P-GZH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z7C-7P-GZH">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="170" width="373" height="480"/>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="z7C-7P-GZH" secondAttribute="trailing" constant="-16" id="1Ue-wZ-00W"/>
-                            <constraint firstItem="z7C-7P-GZH" firstAttribute="leading" secondItem="rkP-sJ-LTt" secondAttribute="leadingMargin" constant="-16" id="jpN-LV-dgP"/>
-                            <constraint firstItem="VxN-fY-mMF" firstAttribute="top" secondItem="z7C-7P-GZH" secondAttribute="bottom" constant="150" id="n5R-sf-Vkq"/>
-                            <constraint firstItem="z7C-7P-GZH" firstAttribute="top" secondItem="jXz-4o-WLM" secondAttribute="bottom" constant="150" id="qzK-Te-hTI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z7C-7P-GZH" secondAttribute="trailing" constant="-5" id="2kT-BX-L6i"/>
+                            <constraint firstItem="z7C-7P-GZH" firstAttribute="leading" secondItem="rkP-sJ-LTt" secondAttribute="leadingMargin" id="HzV-QX-uPG"/>
+                            <constraint firstItem="VxN-fY-mMF" firstAttribute="top" secondItem="z7C-7P-GZH" secondAttribute="bottom" constant="20" id="Jfq-jI-56Q"/>
+                            <constraint firstItem="z7C-7P-GZH" firstAttribute="top" secondItem="jXz-4o-WLM" secondAttribute="bottom" constant="25" id="U3V-dh-PAR"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="z7C-7P-GZH"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="n5R-sf-Vkq"/>
-                                <exclude reference="1Ue-wZ-00W"/>
-                                <exclude reference="jpN-LV-dgP"/>
-                                <exclude reference="qzK-Te-hTI"/>
+                                <exclude reference="2kT-BX-L6i"/>
+                                <exclude reference="HzV-QX-uPG"/>
+                                <exclude reference="U3V-dh-PAR"/>
+                                <exclude reference="Jfq-jI-56Q"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -333,10 +336,10 @@
                                 <include reference="z7C-7P-GZH"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="n5R-sf-Vkq"/>
-                                <include reference="1Ue-wZ-00W"/>
-                                <include reference="jpN-LV-dgP"/>
-                                <include reference="qzK-Te-hTI"/>
+                                <include reference="2kT-BX-L6i"/>
+                                <include reference="HzV-QX-uPG"/>
+                                <include reference="U3V-dh-PAR"/>
+                                <include reference="Jfq-jI-56Q"/>
                             </mask>
                         </variation>
                     </view>
