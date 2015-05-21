@@ -148,7 +148,7 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Cancle">
+                                <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -157,7 +157,7 @@
                                 </connections>
                             </button>
                             <connections>
-                                <action selector="cancle" destination="vXZ-lx-hvc" id="qfn-au-Nzg"/>
+                                <action selector="cancel" destination="vXZ-lx-hvc" id="HeB-k9-qJy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

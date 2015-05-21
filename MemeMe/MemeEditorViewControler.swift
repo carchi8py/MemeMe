@@ -53,9 +53,8 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         self.shareButton.enabled = false
         
     }
-    @IBAction func cancle()
+    @IBAction func cancel()
     {
-        //TODO get Cancle to work
         self.topText.text = ""
         self.bottomText.text = ""
         self.shareButton.enabled = false
