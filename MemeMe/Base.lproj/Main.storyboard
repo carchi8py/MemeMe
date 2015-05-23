@@ -152,7 +152,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancle" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Msg-sR-LjG"/>
+                                    <action selector="cancel" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ncj-dw-iWo"/>
                                     <segue destination="v6e-to-Blf" kind="show" id="sCZ-bx-qXl"/>
                                 </connections>
                             </button>
